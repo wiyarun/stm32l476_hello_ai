@@ -1,0 +1,77 @@
+(venv) wa@wa-VirtualBox:~/HAR-CNN-Keras$ python
+Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+[GCC 8.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from keras.models import Sequential
+Using TensorFlow backend.
+>>> from keras.layers import Dence
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'Dence'
+>>> from keras.layers import Dense
+>>> form keras.models import model_from_json
+  File "<stdin>", line 1
+    form keras.models import model_from_json
+             ^
+SyntaxError: invalid syntax
+>>> from keras.models import model_from_json
+>>> ls
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'ls' is not defined
+>>> 
+>>> ls
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'ls' is not defined
+>>> json_file = open('model.json'),'r')
+  File "<stdin>", line 1
+    json_file = open('model.json'),'r')
+                                      ^
+SyntaxError: invalid syntax
+>>> json_file = open('model.json'),'r')
+  File "<stdin>", line 1
+    json_file = open('model.json'),'r')
+                                      ^
+SyntaxError: invalid syntax
+>>> json_file = open('model.json','r')
+>>> loaded_model_json = json_file.read()
+>>> json_file.close()
+>>> loaded_model = model_from_json(loaded_model_json)
+WARNING:tensorflow:From /home/wa/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/wa/venv/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+>>> loaded_model.load_weights("model.h5")
+2019-04-02 13:42:42.606625: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2494315000 Hz
+2019-04-02 13:42:42.609472: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x2d91be0 executing computations on platform Host. Devices:
+2019-04-02 13:42:42.609593: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+>>> loaded_model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'adam' is not defined
+>>> from keras import optimizer
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'optimizer'
+>>> from keras import optimizers
+>>> adam = optimizers.Adam(lr=0.001, decay =1e-6)
+>>> loaded_model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+>>> import numpy as np
+>>> testX = np.load('testData.npy')
+>>> print(len(testX))
+4891
+>>> print(len(testX[0]))
+90
+>>> testY = np.load('groundTruth.npy')
+>>> len(testY)
+4891
+>>> score = loaded_model.evaluate(testX,testY,verbose=2)
+>>> print(score)
+[0.45211700404426464, 0.8709875281372336]
+>>> print('Baseline Error: %.2f%%' %(100-score[1]*100))
+Baseline Error: 12.90%
+>>> 
+
