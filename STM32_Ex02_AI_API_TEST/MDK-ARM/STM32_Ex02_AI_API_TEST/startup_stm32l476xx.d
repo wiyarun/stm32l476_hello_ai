@@ -1,0 +1,1 @@
+stm32_ex02_ai_api_test\startup_stm32l476xx.o: startup_stm32l476xx.s

@@ -1,0 +1,10 @@
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_dot_prod_f32.c
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/Include/arm_math.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/Include/core_cm4.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/Include/core_cmInstr.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: ../Drivers/CMSIS/Include/core_cmSimd.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+stm32_ex02_ai_api_test\arm_dot_prod_f32.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
